@@ -1,0 +1,4 @@
+'''
+Fake news detection app
+'''
+

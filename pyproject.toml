@@ -1,0 +1,49 @@
+[project]
+name = "verifact"
+version = "2.1.0"
+description = "Retrieval Augmented Neural Claim Verification System — AI-powered fact-checking using web evidence, local NLI models, and semantic reasoning."
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [
+    { name = "Adetya Jamwal" },
+]
+dependencies = [
+    # Core ML — local NLI + embeddings
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "sentence-transformers>=2.0.0",
+    "numpy>=1.24.0",
+
+    # NLP
+    "spacy>=3.7,<4.0",
+    "regex>=2023.10.0",
+
+    # Web scraping & search
+    "trafilatura>=1.6.0",
+    "requests>=2.31.0",
+    "tavily-python>=0.3.0",
+    "duckduckgo-search>=5.0",
+
+    # Flask API
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+    "flask-limiter>=3.5.0",
+    "whitenoise>=6.6.0",
+
+    # LLM Enhancement (optional at runtime, but installed)
+    "groq>=0.4.0",
+
+    # Utilities
+    "huggingface-hub>=0.20.0",
+    "pydantic>=2.5.0",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
